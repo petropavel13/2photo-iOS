@@ -61,6 +61,10 @@ static NSString * const orderTypeCellIdentifier = @"order_type_cell";
     [self.tableView reloadData];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 44;
+}
+
 
 - (CGSize)preferredContentSize {
     CGFloat sum = 0;
