@@ -1,0 +1,8 @@
+platform :ios, '7.0'
+
+pod 'AFNetworking/NSURLConnection', '~> 2.0'
+pod 'MWPhotoBrowser_pp', '~> 1.4.0'
+pod 'WYPopoverController', '~> 0.2.0'
+pod 'DZNSegmentedControl', '~> 1.2'
+
+link_with '2photo', '2photoTests'

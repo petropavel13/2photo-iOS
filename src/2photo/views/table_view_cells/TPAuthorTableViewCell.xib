@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="160" id="KGk-i7-Jjw" customClass="TPAuthorTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="egv-kz-fYU">
+                        <rect key="frame" x="16" y="7" width="50" height="50"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="dNR-S8-kl6"/>
+                            <constraint firstAttribute="width" constant="50" id="pzr-BR-EHH"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sensis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIE-X2-Omg">
+                        <rect key="frame" x="74" y="21" width="238" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="NIE-X2-Omg" firstAttribute="leading" secondItem="egv-kz-fYU" secondAttribute="trailing" constant="8" id="6yO-CR-w4b"/>
+                    <constraint firstItem="NIE-X2-Omg" firstAttribute="centerY" secondItem="egv-kz-fYU" secondAttribute="centerY" id="KSA-xj-e0t"/>
+                    <constraint firstAttribute="trailing" secondItem="NIE-X2-Omg" secondAttribute="trailing" constant="8" id="NcO-mS-kyW"/>
+                    <constraint firstItem="egv-kz-fYU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="XMe-xi-G9h"/>
+                    <constraint firstAttribute="centerY" secondItem="egv-kz-fYU" secondAttribute="centerY" id="nmp-eB-mwJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="authorAvatarImageView" destination="egv-kz-fYU" id="o4b-UR-hOn"/>
+                <outlet property="authorNameLabel" destination="NIE-X2-Omg" id="Goo-Sd-uAA"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
