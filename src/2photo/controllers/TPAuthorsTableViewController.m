@@ -148,6 +148,11 @@ static NSDictionary* sortTypeNameMapping;
     authors = @[];
     [self.tableView reloadData];
 
+    [self.tableView addSubview:self.refreshControl];
+    
+    [self.refreshControl beginRefreshing];
+    [self.tableView setContentOffset:CGPointMake(0, -CGRectGetHeight(self.refreshControl.frame) * 2) animated:YES];
+    
     [self updateLoader];
 
     [infiniteLoader loadMore];

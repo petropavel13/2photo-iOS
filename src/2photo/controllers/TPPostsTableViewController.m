@@ -207,7 +207,7 @@ static NSString * const postCellIdentifier = @"post_cell";
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [popoverControllerSearch presentPopoverFromRect:self.searchBar.bounds
                                                  inView:self.searchBar
-                               permittedArrowDirections:WYPopoverArrowDirectionAny
+                               permittedArrowDirections:WYPopoverArrowDirectionUp
                                                animated:YES];
     });
 }
@@ -287,6 +287,8 @@ static NSString * const postCellIdentifier = @"post_cell";
     [self.tableView reloadData];
 
     [loader loadMore];
+    
+    [self.tableView finishInfiniteScroll];
 }
 
 @end
