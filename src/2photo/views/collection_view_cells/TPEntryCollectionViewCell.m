@@ -42,25 +42,19 @@
     __weak typeof(self) weakSelf = self;
 
     NSURL* url = [NSURL URLWithString:[@"http://" stringByAppendingString:_entry.mediumImageUrl]];
-
-//    __block Entry* blockEntry = _entry;
-
-    currentOperation = [[SDWebImageManager sharedManager] downloadWithURL:url
-                                                                  options:SDWebImageRetryFailed | SDWebImageContinueInBackground
-                                                                 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                                                                     //
-                                                                 }
-                                                                completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished) {
-                                                                    if (finished) {
-//                                                                        if ([blockEntry isEqual:_entry]) { // check if cell already reused
-                                                                            weakSelf.entryImageView.image = image;
-                                                                            weakSelf.entryImageView.hidden = NO;
-                                                                            [weakSelf.loadingIndicator stopAnimating];
-//                                                                        }
-                                                                    } else {
-                                                                        [weakSelf.loadingIndicator stopAnimating];
-                                                                    }
-                                                                }];
+    
+    currentOperation = [[SDWebImageManager sharedManager] downloadImageWithURL:url
+                                                                options:SDWebImageRetryFailed
+                                                               progress:nil
+                                                              completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                                                  if (finished) {
+                                                                      weakSelf.entryImageView.image = image;
+                                                                      weakSelf.entryImageView.hidden = NO;
+                                                                      [weakSelf.loadingIndicator stopAnimating];
+                                                                  } else {
+                                                                      [weakSelf.loadingIndicator stopAnimating];
+                                                                  }
+                                                              }];
 }
 
 

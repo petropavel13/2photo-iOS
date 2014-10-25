@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7843FDAE19FBC1F200225EEC /* PostCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 923A580A1901B3E700673620 /* PostCategory.m */; };
+		7843FDAF19FBC1F500225EEC /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 923A58041901B3E700673620 /* Tag.m */; };
+		7843FDB019FBC1F700225EEC /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 923A583819024D8C00673620 /* Comment.m */; };
+		7843FDB119FBC1F900225EEC /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 9284BE31190ACFA3006496C3 /* Entry.m */; };
+		7843FDB219FBC1FB00225EEC /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 9251576219150BC0003A8213 /* Artist.m */; };
+		7843FDB319FBC1FE00225EEC /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 9251575F19150BC0003A8213 /* Post.m */; };
+		7843FDB419FBC20000225EEC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D468D319278DD40072190E /* User.m */; };
+		7843FDB519FBC22E00225EEC /* TPAppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 923A584D1902690800673620 /* TPAppConstants.m */; };
 		9205018A19019399001ABE8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9205018919019399001ABE8F /* Foundation.framework */; };
 		9205018C19019399001ABE8F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9205018B19019399001ABE8F /* CoreGraphics.framework */; };
 		9205018E19019399001ABE8F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9205018D19019399001ABE8F /* UIKit.framework */; };
@@ -100,8 +108,7 @@
 
 /* Begin PBXFileReference section */
 		1F738D519D3749C2B94D83AA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C3E9B272180464199216E45 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		9205018619019399001ABE8F /* two_photo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = two_photo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9205018619019399001ABE8F /* two_photo_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = two_photo_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9205018919019399001ABE8F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9205018B19019399001ABE8F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9205018D19019399001ABE8F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -235,6 +242,8 @@
 		92D468D319278DD40072190E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = models/User.m; sourceTree = "<group>"; };
 		92D902891916920A009B97C0 /* UITableView+PreferredHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+PreferredHeight.h"; path = "extensions/UITableView+PreferredHeight.h"; sourceTree = "<group>"; };
 		92D9028A1916920A009B97C0 /* UITableView+PreferredHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+PreferredHeight.m"; path = "extensions/UITableView+PreferredHeight.m"; sourceTree = "<group>"; };
+		BFB32B8866431A1FC2F47A2B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E3000C4697D71E546ABAC3FB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,14 +281,14 @@
 				920501AE19019399001ABE8F /* 2photoTests */,
 				9205018819019399001ABE8F /* Frameworks */,
 				9205018719019399001ABE8F /* Products */,
-				6C3E9B272180464199216E45 /* Pods.xcconfig */,
+				A07B50E74FE12472597D1B3E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		9205018719019399001ABE8F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9205018619019399001ABE8F /* two_photo.app */,
+				9205018619019399001ABE8F /* two_photo_app.app */,
 				920501A619019399001ABE8F /* 2photoTests.xctest */,
 			);
 			name = Products;
@@ -535,6 +544,15 @@
 			name = collection_view_cells;
 			sourceTree = "<group>";
 		};
+		A07B50E74FE12472597D1B3E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E3000C4697D71E546ABAC3FB /* Pods.debug.xcconfig */,
+				BFB32B8866431A1FC2F47A2B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -554,7 +572,7 @@
 			);
 			name = 2photo;
 			productName = 2photo;
-			productReference = 9205018619019399001ABE8F /* two_photo.app */;
+			productReference = 9205018619019399001ABE8F /* two_photo_app.app */;
 			productType = "com.apple.product-type.application";
 		};
 		920501A519019399001ABE8F /* 2photoTests */ = {
@@ -669,7 +687,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		99E5BE65B71C4525B3100B1F /* Check Pods Manifest.lock */ = {
@@ -699,7 +717,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -770,7 +788,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7843FDB419FBC20000225EEC /* User.m in Sources */,
+				7843FDAF19FBC1F500225EEC /* Tag.m in Sources */,
+				7843FDB119FBC1F900225EEC /* Entry.m in Sources */,
 				920501B519019399001ABE8F /* 2photoTests.m in Sources */,
+				7843FDAE19FBC1F200225EEC /* PostCategory.m in Sources */,
+				7843FDB219FBC1FB00225EEC /* Artist.m in Sources */,
+				7843FDB019FBC1F700225EEC /* Comment.m in Sources */,
+				7843FDB319FBC1FE00225EEC /* Post.m in Sources */,
+				7843FDB519FBC22E00225EEC /* TPAppConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,14 +904,13 @@
 		};
 		920501B919019399001ABE8F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C3E9B272180464199216E45 /* Pods.xcconfig */;
+			baseConfigurationReference = E3000C4697D71E546ABAC3FB /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "2photo/2photo-Prefix.pch";
 				INFOPLIST_FILE = "2photo/2photo-Info.plist";
-				INSTALL_OWNER = tgt0;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = two_photo_app;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -895,14 +920,13 @@
 		};
 		920501BA19019399001ABE8F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C3E9B272180464199216E45 /* Pods.xcconfig */;
+			baseConfigurationReference = BFB32B8866431A1FC2F47A2B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "2photo/2photo-Prefix.pch";
 				INFOPLIST_FILE = "2photo/2photo-Info.plist";
-				INSTALL_OWNER = tgt0;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = two_photo_app;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -912,9 +936,8 @@
 		};
 		920501BC19019399001ABE8F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C3E9B272180464199216E45 /* Pods.xcconfig */;
+			baseConfigurationReference = E3000C4697D71E546ABAC3FB /* Pods.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/2photo.app/2photo";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -935,9 +958,8 @@
 		};
 		920501BD19019399001ABE8F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C3E9B272180464199216E45 /* Pods.xcconfig */;
+			baseConfigurationReference = BFB32B8866431A1FC2F47A2B /* Pods.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/2photo.app/2photo";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

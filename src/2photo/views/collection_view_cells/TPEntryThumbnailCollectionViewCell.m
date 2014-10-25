@@ -44,22 +44,21 @@
 
     __block Entry* blockEntry = _entry;
 
-    [[SDWebImageManager sharedManager] downloadWithURL:url
-                                               options:SDWebImageRetryFailed | SDWebImageContinueInBackground
-                                              progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                                                  //
-                                              }
-                                             completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished) {
-                                                 if (finished) {
-                                                     if ([blockEntry isEqual:_entry]) { // check if cell already reused 
-                                                         weakSelf.thumbnailImageView.image = image;
-                                                         weakSelf.thumbnailImageView.hidden = NO;
-                                                         [weakSelf.loadingIndicator stopAnimating];
-                                                     }
-                                                 } else {
-                                                     [weakSelf.loadingIndicator stopAnimating];
-                                                 }
-                                             }];
+    
+    [[SDWebImageManager sharedManager] downloadImageWithURL:url
+                                                    options:SDWebImageRetryFailed
+                                                   progress:nil
+                                                  completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                                      if (finished) {
+                                                          if ([blockEntry isEqual:_entry]) { // check if cell already reused
+                                                              weakSelf.thumbnailImageView.image = image;
+                                                              weakSelf.thumbnailImageView.hidden = NO;
+                                                              [weakSelf.loadingIndicator stopAnimating];
+                                                          }
+                                                      } else {
+                                                          [weakSelf.loadingIndicator stopAnimating];
+                                                      }
+                                                  }];
     
     self.orderLabel.text = [@"#" stringByAppendingString:_entry.order.stringValue];
     self.ratingLabel.text = [_entry.rating.stringValue stringByAppendingString:@"%"];

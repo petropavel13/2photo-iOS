@@ -33,26 +33,25 @@
 
 - (void)setComment:(Comment *)comment {
     _comment = comment;
-
+    
     __weak typeof(self) weakSelf = self;
-
+    
     __block Comment* blockComment = _comment;
-
+    
     NSURL* url = [NSURL URLWithString:[@"http://" stringByAppendingString:_comment.author.avatarUrl]];
-
-    [[SDWebImageManager sharedManager] downloadWithURL:url
-                                               options:SDWebImageRetryFailed
-                                              progress:nil
-                                             completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished) {
-                                                 if (finished) {
-                                                     if ([blockComment isEqual:_comment]) {
-                                                         weakSelf.authorAvatarImageView.image = image;
-                                                     }
-                                                 } else {
-                                                     //
-                                                 }
-                                             }];
-
+    
+    
+    [[SDWebImageManager sharedManager] downloadImageWithURL:url
+                                                    options:SDWebImageRetryFailed
+                                                   progress:nil
+                                                  completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                                      if (finished) {
+                                                          if ([blockComment isEqual:_comment]) {
+                                                              weakSelf.authorAvatarImageView.image = image;
+                                                          }
+                                                      }
+                                                  }];
+    
     self.authorNameLabel.text = _comment.author.name;
     self.timeLabel.text = [NSDateFormatter localizedStringFromDate:_comment.date
                                                          dateStyle:NSDateFormatterLongStyle
@@ -65,9 +64,9 @@
     CGRect r = self.frame;
     r.size.width = width;
     self.frame = r;
-
+    
     [self layoutIfNeeded];
-
+    
     return self.topSpaceConstraint.constant
     + self.authorNameLabel.optimalSize.height
     + self.timeMessageSpaceConstraint.constant
@@ -79,7 +78,7 @@
 
 - (void)setIndentationLevel:(NSInteger)indentationLevel {
     [super setIndentationLevel:indentationLevel];
-
+    
     self.avatarLeftSpaceConstraint.constant = 16 * (indentationLevel + 1);
     self.messageLeftSpaceConstraint.constant = 16 * (indentationLevel + 1);
 }

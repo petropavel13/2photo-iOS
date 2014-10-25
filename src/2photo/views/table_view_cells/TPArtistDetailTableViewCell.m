@@ -27,15 +27,15 @@
     __weak typeof(self) weakSelf = self;
 
     NSURL* url = [NSURL URLWithString:[@"http://" stringByAppendingString:_artist.avatarUrl]];
-
-    operation = [[SDWebImageManager sharedManager] downloadWithURL:url
-                                                           options:SDWebImageRetryFailed
-                                                          progress:nil
-                                                         completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished) {
-                                                             if (finished) {
-                                                                 weakSelf.avatarImageView.image = image;
-                                                             }
-                                                         }];
+    
+    operation = [[SDWebImageManager sharedManager] downloadImageWithURL:url
+                                                                options:SDWebImageRetryFailed
+                                                               progress:nil
+                                                              completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                                                  if (finished) {
+                                                                      weakSelf.avatarImageView.image = image;
+                                                                  }
+                                                              }];
 
     self.nameLabel.text = _artist.name;
     self.postsLabel.text = _artist.numberOfPosts.stringValue;

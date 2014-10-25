@@ -112,7 +112,7 @@ static NSDictionary* sortTypeNameMapping;
     authors = [authors arrayByAddingObjectsFromArray:objects];
 
     [self.refreshControl endRefreshing];
-    self.refreshControl = nil;
+    [self.refreshControl removeFromSuperview];
 
     [self.tableView insertRowsAtIndexPaths:mutableIndexes withRowAnimation:UITableViewRowAnimationNone];
 }

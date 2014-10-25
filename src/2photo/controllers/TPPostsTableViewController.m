@@ -153,7 +153,7 @@ static NSString * const postCellIdentifier = @"post_cell";
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView.contentOffset.y > (scrollView.contentSize.height * 0.8)) {
+    if (scrollView.contentOffset.y > (scrollView.contentSize.height * 0.7)) {
         [loader loadMore];
     }
 }

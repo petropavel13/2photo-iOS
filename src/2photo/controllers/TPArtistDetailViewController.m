@@ -20,9 +20,9 @@
 
 @interface TPArtistDetailViewController () <TPInfiniteLoaderDelegate, TPPostDelegate> {
     TPInfiniteLoader* infiniteLoader;
-
+    
     NSArray* posts;
-
+    
     TPPostTableViewCell* sharedPostCell;
 }
 
@@ -45,54 +45,55 @@ static NSString * const postCellIdentifier = @"post_cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     __weak typeof(self) weakSelf = self;
-
+    
     NSURL* url = [NSURL URLWithString:[@"http://" stringByAppendingString:_artist.avatarUrl] ];
-
-    [[SDWebImageManager sharedManager] downloadWithURL:url
-                                               options:SDWebImageRetryFailed
-                                              progress:nil
-                                             completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished) {
-                                                 if (finished) {
-                                                     weakSelf.avatarImageView.image = image;
-                                                 }
-                                             }];
-
+    
+    [[SDWebImageManager sharedManager] downloadImageWithURL:url
+                                                    options:SDWebImageRetryFailed
+                                                   progress:nil
+                                                  completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                                      if (finished) {
+                                                          weakSelf.avatarImageView.image = image;
+                                                      }
+                                                  }];
+    
+    
     self.nameLabel.text = _artist.name;
     self.descriptionTextView.text = _artist.artistDescription;
     self.descriptionTextView.font = [UIFont systemFontOfSize:15];
     self.descriptionTextView.textColor = [UIColor lightGrayColor];
-
+    
     const CGFloat optimalHeightForDescription = self.descriptionTextView.optimalSize.height;
-
+    
     if (optimalHeightForDescription < self.descriptionTextViewHeightConstraint.constant) {
         self.descriptionTextViewHeightConstraint.constant = optimalHeightForDescription;
     }
-
-    self.descriptionTextView.textContainerInset = UIEdgeInsetsZero;	
-
+    
+    self.descriptionTextView.textContainerInset = UIEdgeInsetsZero;
+    
     self.segmentedControl.font = [UIFont systemFontOfSize:20];
     self.segmentedControl.showsCount = NO;
-
+    
     self.segmentedControl.items = @[@"Посты"];
-
+    
     NSBundle* bundle = [NSBundle mainBundle];
-
+    
     [self.postsTableView registerNib:[UINib nibWithNibName:@"TPPostTableViewCell_iPad" bundle:bundle] forCellReuseIdentifier:postCellIdentifier];
-
+    
     sharedPostCell = [[bundle loadNibNamed:@"TPPostTableViewCell_iPad" owner:self options:nil] firstObject];
-
+    
     posts = @[];
-
+    
     infiniteLoader = [TPInfiniteLoader loaderWithClass:[Post class] filterParams:@{@"limit": @16, @"artists": _artist.id} andDelegate:self];
-
+    
     [infiniteLoader loadMore];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-
+    
     [[SDImageCache sharedImageCache] clearMemory];
 }
 
@@ -104,16 +105,16 @@ static NSString * const postCellIdentifier = @"post_cell";
     TPPostTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:postCellIdentifier];
     cell.post = posts[indexPath.row];
     cell.delegate = self;
-
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     TPPostTableViewCell* cell = (TPPostTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
-
+    
     TPPostDetailTableViewController* targetController = (TPPostDetailTableViewController*)[currentStoryboard instantiateViewControllerWithIdentifier:postDetailControllerIdentifier];
     targetController.post = cell.post;
-
+    
     [self.navigationController pushViewController:targetController animated:YES];
 }
 
@@ -124,7 +125,7 @@ static NSString * const postCellIdentifier = @"post_cell";
             return [sharedPostCell optimalHeightForWidth:CGRectGetWidth(tableView.frame)];;
         }
     }
-
+    
     return UITableViewAutomaticDimension;
 }
 
@@ -136,15 +137,15 @@ static NSString * const postCellIdentifier = @"post_cell";
 
 - (void)infiniteLoader:(TPInfiniteLoader *)loader didFinishedLoading:(NSArray *)objects {
     NSMutableArray* mutableIndexes = [NSMutableArray arrayWithCapacity:objects.count];
-
+    
     [self.postsLoading stopAnimating];
-
+    
     for (NSUInteger i = posts.count; i < posts.count + objects.count; ++i) {
         [mutableIndexes addObject:[NSIndexPath indexPathForRow:i inSection:0]];
     }
-
+    
     posts = [posts arrayByAddingObjectsFromArray:objects];
-
+    
     [self.postsTableView insertRowsAtIndexPaths:mutableIndexes withRowAnimation:UITableViewRowAnimationFade];
 }
 
@@ -152,7 +153,7 @@ static NSString * const postCellIdentifier = @"post_cell";
     TPEntryDetailViewController* browser = [TPEntryDetailViewController new];
     browser.post = cell.post;
     browser.selectedEntry = [entry.order unsignedIntegerValue] - 1;
-
+    
     [self.navigationController pushViewController:browser animated:YES];
 }
 

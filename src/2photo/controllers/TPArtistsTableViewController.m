@@ -114,7 +114,7 @@ static NSDictionary* sortTypeNameMapping;
     artists = [artists arrayByAddingObjectsFromArray:objects];
 
     [self.refreshControl endRefreshing];
-    self.refreshControl = nil;
+    [self.refreshControl removeFromSuperview];
 
     [self.tableView insertRowsAtIndexPaths:mutableIndexes withRowAnimation:UITableViewRowAnimationNone];
 }
@@ -189,7 +189,7 @@ static NSDictionary* sortTypeNameMapping;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView.contentOffset.y > (scrollView.contentSize.height * 0.8)) {
+    if (scrollView.contentOffset.y > (scrollView.contentSize.height * 0.7)) {
         [infiniteLoader loadMore];
     }
 }

@@ -71,15 +71,15 @@ static NSString * const commentCellIdentifier = @"comment_cell";
     __weak typeof(self) weakSelf = self;
 
     NSURL* url = [NSURL URLWithString:[@"http://" stringByAppendingString:_author.avatarUrl] ];
-
-    [[SDWebImageManager sharedManager] downloadWithURL:url
-                                               options:SDWebImageRetryFailed
-                                              progress:nil
-                                             completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished) {
-                                                 if (finished) {
-                                                     weakSelf.avatarImageView.image = image;
-                                                 }
-                                             }];
+    
+    [[SDWebImageManager sharedManager] downloadImageWithURL:url
+                                                    options:SDWebImageRetryFailed
+                                                   progress:nil
+                                                  completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                                      if (finished) {
+                                                          weakSelf.avatarImageView.image = image;
+                                                      }
+                                                  }];
 
     self.nameLabel.text = _author.name;
     self.descriptionTextView.text = _author.userDescription;
@@ -246,7 +246,7 @@ static NSString * const commentCellIdentifier = @"comment_cell";
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView.contentOffset.y > (scrollView.contentSize.height * 0.8)) {
+    if (scrollView.contentOffset.y > (scrollView.contentSize.height * 0.7)) {
         if ([scrollView isEqual:self.postsTableView]) {
             [postsLoader loadMore];
         } else if ([scrollView isEqual:self.commentsTableView]) {

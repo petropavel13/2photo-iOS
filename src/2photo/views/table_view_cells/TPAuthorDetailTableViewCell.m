@@ -30,15 +30,15 @@
     NSURL* url = [NSURL URLWithString:[@"http://" stringByAppendingString:_author.avatarUrl]];
 
     __weak typeof(self) weakSelf = self;
-
-    operation = [[SDWebImageManager sharedManager] downloadWithURL:url
-                                                           options:SDWebImageRetryFailed
-                                                          progress:nil
-                                                         completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished) {
-                                                             if (finished) {
-                                                                 weakSelf.avatarImageView.image = image;
-                                                             }
-                                                         }];
+    
+    operation = [[SDWebImageManager sharedManager] downloadImageWithURL:url
+                                                                 options:SDWebImageRetryFailed
+                                                                progress:nil
+                                                               completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                                                   if (finished) {
+                                                                       weakSelf.avatarImageView.image = image;
+                                                                   }
+                                                               }];
 
     self.nameLabel.text = _author.name;
     self.carmaLabel.text = _author.carma.stringValue;

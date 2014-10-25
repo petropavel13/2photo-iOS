@@ -10,7 +10,7 @@
 #import <SDWebImageManager.h>
 
 @interface TPArtistTableViewCell () {
-    id<SDWebImageOperation> opearation;
+    id<SDWebImageOperation> operation;
 }
 
 @property (strong, nonatomic) IBOutlet UIImageView *artistAvatarImageView;
@@ -27,15 +27,15 @@
         __weak typeof(self) weakSelf = self;
 
         NSURL* url = [NSURL URLWithString:[@"http://" stringByAppendingString:_artist.avatarUrl]];
-
-        opearation = [[SDWebImageManager sharedManager] downloadWithURL:url
-                                                                options:SDWebImageHighPriority | SDWebImageRetryFailed
-                                                               progress:nil
-                                                              completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished) {
-                                                                  if (finished) {
-                                                                      weakSelf.artistAvatarImageView.image = image;
-                                                                  }
-                                                              }];
+        
+        operation = [[SDWebImageManager sharedManager] downloadImageWithURL:url
+                                                        options:SDWebImageRetryFailed
+                                                       progress:nil
+                                                      completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                                          if (finished) {
+                                                              weakSelf.artistAvatarImageView.image = image;
+                                                          }
+                                                      }];
     }
 
 
@@ -45,7 +45,7 @@
 - (void)prepareForReuse {
     [super prepareForReuse];
 
-    [opearation cancel];
+    [operation cancel];
 
     self.artistAvatarImageView.image = nil;
 }

@@ -22,27 +22,29 @@
 
 - (void)setAuthor:(User *)author {
     _author = author;
-
+    
     NSURL* url = [NSURL URLWithString:[@"http://" stringByAppendingString:_author.avatarUrl]];
-
+    
     __weak typeof(self) weakSelf = self;
-
-    operation = [[SDWebImageManager sharedManager] downloadWithURL:url
-                                                           options:SDWebImageHighPriority | SDWebImageRetryFailed
-                                                          progress:nil
-                                                         completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished) {
-                                                             if (finished) {
-                                                                 weakSelf.authorAvatarImageView.image = image;
-                                                             }
-                                                         }];
+    
+    operation = [[SDWebImageManager sharedManager] downloadImageWithURL:url
+                                                                options:SDWebImageRetryFailed
+                                                               progress:nil
+                                                              completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                                                  if (finished) {
+                                                                      if (finished) {
+                                                                          weakSelf.authorAvatarImageView.image = image;
+                                                                      }
+                                                                  }
+                                                              }];
     self.authorNameLabel.text = _author.name;
 }
 
 - (void)prepareForReuse {
     [super prepareForReuse];
-
+    
     [operation cancel];
-
+    
     self.authorAvatarImageView.image = nil;
 }
 
