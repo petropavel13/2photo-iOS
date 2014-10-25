@@ -19,18 +19,21 @@
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фотограф Martin Rietze изъездил весь мир в поисках одного из самых красивых явлений природы - извержения вулкана" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="629" translatesAutoresizingMaskIntoConstraints="NO" id="T7j-oN-AqV">
                                 <rect key="frame" x="0.0" y="0.0" width="629" height="41"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Автор: mnis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x49-WV-wlQ">
                                 <rect key="frame" x="0.0" y="45" width="629" height="17"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Метки: martin природы rietze явление извержения вулкана" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuq-fK-RQf">
                                 <rect key="frame" x="0.0" y="64" width="629" height="17"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -49,16 +52,17 @@
                             <constraint firstAttribute="trailing" secondItem="T7j-oN-AqV" secondAttribute="trailing" id="o4S-p3-sMh"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oXg-Iv-gZS">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXg-Iv-gZS">
                         <rect key="frame" x="655" y="8" width="105" height="24"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Смотреть все" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyc-W5-Hk0">
                                 <rect key="frame" x="0.0" y="4" width="93" height="17"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ios_disclosure_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="wei-jb-MaG">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios_disclosure_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="wei-jb-MaG">
                                 <rect key="frame" x="97" y="6" width="8" height="13"/>
                             </imageView>
                         </subviews>
@@ -83,6 +87,7 @@
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="18" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1s-pd-vzb">
                                 <rect key="frame" x="20" y="34" width="16" height="17"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -96,6 +101,7 @@
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="87%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yQ-zK-ZQ4">
                                 <rect key="frame" x="68" y="34" width="31" height="17"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -140,6 +146,7 @@
                     <constraint firstAttribute="trailing" secondItem="pcl-D0-I3J" secondAttribute="trailing" id="FI5-xT-cBd"/>
                     <constraint firstItem="pcl-D0-I3J" firstAttribute="top" secondItem="sOm-fE-wly" secondAttribute="bottom" constant="4" id="TEj-yN-PXt"/>
                     <constraint firstItem="Mxn-WB-nsv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="UHf-sb-6ld"/>
+                    <constraint firstItem="oXg-Iv-gZS" firstAttribute="leading" secondItem="Mxn-WB-nsv" secondAttribute="trailing" constant="10" id="hkV-ms-gJ0"/>
                     <constraint firstItem="pcl-D0-I3J" firstAttribute="top" secondItem="Mxn-WB-nsv" secondAttribute="bottom" id="mxU-lC-ro4"/>
                     <constraint firstItem="sOm-fE-wly" firstAttribute="top" secondItem="oXg-Iv-gZS" secondAttribute="bottom" constant="8" id="sI6-qW-l8K"/>
                     <constraint firstItem="pcl-D0-I3J" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="w46-wU-YNm"/>
