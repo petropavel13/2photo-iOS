@@ -64,8 +64,11 @@
 }
 
 - (void)loadMore {
-    if (request.isExecuting || _isLoadingFinished == NO || [[NSNull null] isEqual:url]) {
+    if (request.isExecuting || _isLoadingFinished == NO) {
         return;
+    } else if ([[NSNull null] isEqual:url]) { // no next page
+        _isLoadingFinished = YES;
+        [self.delegate infiniteLoader:self didFinishedLoading:@[]];
     } else {
         _isLoadingFinished = NO;
         [self updateRequest];

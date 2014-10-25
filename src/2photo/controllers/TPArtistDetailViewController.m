@@ -17,6 +17,7 @@
 #import "Entry.h"
 #import <SDWebImageManager.h>
 #import "UITextView+OptimalSize.h"
+#import <UIScrollView+InfiniteScroll.h>
 
 @interface TPArtistDetailViewController () <TPInfiniteLoaderDelegate, TPPostDelegate> {
     TPInfiniteLoader* infiniteLoader;
@@ -59,7 +60,6 @@ static NSString * const postCellIdentifier = @"post_cell";
                                                       }
                                                   }];
     
-    
     self.nameLabel.text = _artist.name;
     self.descriptionTextView.text = _artist.artistDescription;
     self.descriptionTextView.font = [UIFont systemFontOfSize:15];
@@ -89,6 +89,14 @@ static NSString * const postCellIdentifier = @"post_cell";
     infiniteLoader = [TPInfiniteLoader loaderWithClass:[Post class] filterParams:@{@"limit": @16, @"artists": _artist.id} andDelegate:self];
     
     [infiniteLoader loadMore];
+    
+    self.postsTableView.infiniteScrollIndicatorStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    
+    __weak typeof(infiniteLoader) weakLoader = infiniteLoader;
+    
+    [self.postsTableView addInfiniteScrollWithHandler:^(UIScrollView *scrollView) {
+        [weakLoader loadMore];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -129,12 +137,6 @@ static NSString * const postCellIdentifier = @"post_cell";
     return UITableViewAutomaticDimension;
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView.contentOffset.y > (scrollView.contentSize.height * 0.8)) {
-        [infiniteLoader loadMore];
-    }
-}
-
 - (void)infiniteLoader:(TPInfiniteLoader *)loader didFinishedLoading:(NSArray *)objects {
     NSMutableArray* mutableIndexes = [NSMutableArray arrayWithCapacity:objects.count];
     
@@ -147,6 +149,8 @@ static NSString * const postCellIdentifier = @"post_cell";
     posts = [posts arrayByAddingObjectsFromArray:objects];
     
     [self.postsTableView insertRowsAtIndexPaths:mutableIndexes withRowAnimation:UITableViewRowAnimationFade];
+    
+    [self.postsTableView finishInfiniteScroll];
 }
 
 - (void)postTableViewCell:(TPPostTableViewCell *)cell didSelectEntry:(Entry *)entry {

@@ -18,12 +18,14 @@ PODS:
   - SDWebImage (3.7.1):
     - SDWebImage/Core
   - SDWebImage/Core (3.7.1)
+  - UIScrollView-InfiniteScroll (0.2.2)
   - WYPopoverController (0.3.3)
 
 DEPENDENCIES:
   - AFNetworking/NSURLConnection (~> 2.0)
   - DZNSegmentedControl_pp (~> 1.2)
   - MWPhotoBrowser_pp (~> 1.4.1)
+  - UIScrollView-InfiniteScroll (~> 0.2.2)
   - WYPopoverController (~> 0.3.0)
 
 SPEC CHECKSUMS:
@@ -34,6 +36,7 @@ SPEC CHECKSUMS:
   MWPhotoBrowser_pp: e54ca69b077681f2a1f2e100971bace0344f8c7f
   PSTCollectionView: d9f466e4554cc83260ca9bde7beb27f308e8fd76
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
+  UIScrollView-InfiniteScroll: 9de938ea081d52e0b2260fed077d8c68be7e7d01
   WYPopoverController: 86aa5a8993fea95f59028d5d944d0f21f8bee9b9
 
 COCOAPODS: 0.34.4

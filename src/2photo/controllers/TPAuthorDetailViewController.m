@@ -17,6 +17,7 @@
 #import "TPAppConstants.h"
 #import "TPPostDetailTableViewController.h"
 #import "UITextView+OptimalSize.h"
+#import <UIScrollView+InfiniteScroll.h>
 
 @interface TPAuthorDetailViewController () <TPInfiniteLoaderDelegate, TPPostDelegate> {
     BOOL postWasShown;
@@ -126,6 +127,22 @@ static NSString * const commentCellIdentifier = @"comment_cell";
 
     self.postsTableView.hidden = NO;
     self.commentsTableView.hidden = YES;
+    
+    self.postsTableView.infiniteScrollIndicatorStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    
+    __weak typeof(postsLoader) weakLoaderPosts = postsLoader;
+    
+    [self.postsTableView addInfiniteScrollWithHandler:^(UIScrollView *scrollView) {
+        [weakLoaderPosts loadMore];
+    }];
+    
+    self.commentsTableView.infiniteScrollIndicatorStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    
+    __weak typeof(commentsLoader) weakLoaderComments = commentsLoader;
+    
+    [self.commentsTableView addInfiniteScrollWithHandler:^(UIScrollView *scrollView) {
+        [weakLoaderComments loadMore];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -234,6 +251,8 @@ static NSString * const commentCellIdentifier = @"comment_cell";
         posts = [posts arrayByAddingObjectsFromArray:objects];
 
         [self.postsTableView insertRowsAtIndexPaths:mutableIndexes withRowAnimation:UITableViewRowAnimationFade];
+        
+        [self.postsTableView finishInfiniteScroll];
     } else if ([loader isEqual:commentsLoader]) {
         for (NSUInteger i = comments.count; i < comments.count + objects.count; ++i) {
             [mutableIndexes addObject:[NSIndexPath indexPathForRow:i inSection:0]];
@@ -242,16 +261,8 @@ static NSString * const commentCellIdentifier = @"comment_cell";
         comments = [comments arrayByAddingObjectsFromArray:objects];
 
         [self.commentsTableView insertRowsAtIndexPaths:mutableIndexes withRowAnimation:UITableViewRowAnimationFade];
-    }
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView.contentOffset.y > (scrollView.contentSize.height * 0.7)) {
-        if ([scrollView isEqual:self.postsTableView]) {
-            [postsLoader loadMore];
-        } else if ([scrollView isEqual:self.commentsTableView]) {
-            [commentsLoader loadMore];
-        }
+        
+        [self.commentsTableView finishInfiniteScroll];
     }
 }
 

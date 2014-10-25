@@ -15,6 +15,7 @@
 #import "TPSortTypeTableViewController.h"
 #import "TPAppConstants.h"
 #import "TPAuthorDetailViewController.h"
+#import <UIScrollView+InfiniteScroll.h>
 
 
 @interface TPAuthorsTableViewController () <TPInfiniteLoaderDelegate, TPObjectSelectedDelegate> {
@@ -65,6 +66,14 @@ static NSDictionary* sortTypeNameMapping;
 
     [self updateLoader];
     [infiniteLoader loadMore];
+    
+    self.tableView.infiniteScrollIndicatorStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    
+    __weak typeof(infiniteLoader) weakLoader = infiniteLoader;
+    
+    [self.tableView addInfiniteScrollWithHandler:^(UIScrollView *scrollView) {
+        [weakLoader loadMore];
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -115,6 +124,8 @@ static NSDictionary* sortTypeNameMapping;
     [self.refreshControl removeFromSuperview];
 
     [self.tableView insertRowsAtIndexPaths:mutableIndexes withRowAnimation:UITableViewRowAnimationNone];
+    
+    [self.tableView finishInfiniteScroll];
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
@@ -184,12 +195,6 @@ static NSDictionary* sortTypeNameMapping;
         self.sortLabel.alpha = 1.0;
         self.sortArrow.alpha = 0.6;
     }];
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView.contentOffset.y > (scrollView.contentSize.height * 0.8)) {
-        [infiniteLoader loadMore];
-    }
 }
 
 @end

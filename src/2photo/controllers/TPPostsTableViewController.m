@@ -27,6 +27,7 @@
 #import "TPArtistDetailViewController.h"
 #import "Artist+Parser.h"
 #import "User+Parser.h"
+#import <UIScrollView+InfiniteScroll.h>
 
 @interface TPPostsTableViewController () <TPPostDelegate, TPInfiniteLoaderDelegate, TPTapDelegate,
                                             WYPopoverControllerDelegate, TPObjectSelectedDelegate> {
@@ -91,6 +92,14 @@ static NSString * const postCellIdentifier = @"post_cell";
     popoverControllerSearch.theme.fillBottomColor = [UIColor clearColor];
 
     selectedCategory = nil;
+    
+    self.tableView.infiniteScrollIndicatorStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    
+    __weak typeof(loader) weakLoader = loader;
+    
+    [self.tableView addInfiniteScrollWithHandler:^(UIScrollView *scrollView) {
+        [weakLoader loadMore];
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -152,14 +161,6 @@ static NSString * const postCellIdentifier = @"post_cell";
     [self.navigationController pushViewController:browser animated:YES];
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView.contentOffset.y > (scrollView.contentSize.height * 0.7)) {
-        [loader loadMore];
-    }
-}
-
-//
-
 - (void)infiniteLoader:(TPInfiniteLoader *)loader didFinishedLoading:(NSArray *)objects {
     NSMutableArray* mutableIndexes = [NSMutableArray arrayWithCapacity:objects.count];
 
@@ -172,6 +173,8 @@ static NSString * const postCellIdentifier = @"post_cell";
     [self.refreshControl endRefreshing];
 
     [self.tableView insertRowsAtIndexPaths:mutableIndexes withRowAnimation:UITableViewRowAnimationNone];
+    
+    [self.tableView finishInfiniteScroll];
 }
 
 - (void)pressStartEventDetectedByTapRecognizer:(TPTapRecognizer *)recognizer {
