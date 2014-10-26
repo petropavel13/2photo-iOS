@@ -45,9 +45,10 @@ static NSString * const commentCellReuseIdentifier = @"comment_cell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Comment* temp = _comments[indexPath.row];
+    
     @synchronized(sharedCell) {
-        sharedCell.comment = _comments[indexPath.row];
-        return [sharedCell optimalHeightForWidth:CGRectGetWidth(tableView.frame)];
+        return [sharedCell optimalHeightForWidth:CGRectGetWidth(tableView.frame) withComment:temp];
     }
 }
 

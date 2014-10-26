@@ -210,18 +210,18 @@ static NSString * const commentCellIdentifier = @"comment_cell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([tableView isEqual:self.postsTableView]) {
+        Post* temp = posts[indexPath.row];
+        temp.author = _author;
+        
         @synchronized(sharedPostCell) {
-            Post* temp = posts[indexPath.row];
-            temp.author = _author;
-            sharedPostCell.post = temp;
-            return [sharedPostCell optimalHeightForWidth:CGRectGetWidth(tableView.frame)];;
+            return [sharedPostCell optimalHeightForWidth:CGRectGetWidth(tableView.frame) withPost:temp];
         }
     } else if ([tableView isEqual:self.commentsTableView]) {
+        Comment* temp = comments[indexPath.row];
+        temp.author = _author;
+        
         @synchronized(sharedCommentCell) {
-            Comment* temp = comments[indexPath.row];
-            temp.author = _author;
-            sharedCommentCell.comment = temp;
-            return [sharedCommentCell optimalHeightForWidth:CGRectGetWidth(tableView.frame)];
+            return [sharedCommentCell optimalHeightForWidth:CGRectGetWidth(tableView.frame) withComment:temp];
         }
     }
 

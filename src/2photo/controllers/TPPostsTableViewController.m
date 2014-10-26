@@ -136,11 +136,10 @@ static NSString * const postCellIdentifier = @"post_cell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Post* post = posts[indexPath.row];
-
+    Post* temp = posts[indexPath.row];
+    
     @synchronized(sharedCell) {
-        sharedCell.post = post;
-        return [sharedCell optimalHeightForWidth:CGRectGetWidth(tableView.frame)];
+        return [sharedCell optimalHeightForWidth:CGRectGetWidth(tableView.frame) withPost:temp];
     }
 }
 

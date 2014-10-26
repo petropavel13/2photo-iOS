@@ -50,24 +50,30 @@ static NSString * const entryCollectionCellIdentifier = @"entry_cell";
     self.selectedBackgroundView = bg;
 }
 
+- (void)setPostWithoutEntries:(Post *)post {
+    self.postTitleLabel.text = post.title;
+    self.authorNameLabel.text = [@"Автор: " stringByAppendingString:post.author.name];
+    
+    NSMutableArray* mutableTagsNames = [NSMutableArray arrayWithCapacity:post.tags.count];
+    
+    for (Tag* t in post.tags) {
+        [mutableTagsNames addObject:t.title];
+    }
+    
+    self.postTagsLabel.text = [@"Метки: " stringByAppendingString:[mutableTagsNames componentsJoinedByString:@" "]];
+    self.ratingLabel.text = [post.rating.stringValue stringByAppendingString:@"%"];
+    self.commentsLabel.text = post.numberOfComments.stringValue;
+}
+
 - (void)setPost:(Post *)post {
     _post = post;
 
+    [self setPostWithoutEntries:_post];
+    
     sortedEntries = [_post.entries sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"order" ascending:YES]]];
 
-    self.postTitleLabel.text = _post.title;
-    self.authorNameLabel.text = [@"Автор: " stringByAppendingString:_post.author.name];
-
-    NSMutableArray* mutableTagsNames = [NSMutableArray arrayWithCapacity:_post.tags.count];
-
-    for (Tag* t in _post.tags) {
-        [mutableTagsNames addObject:t.title];
-    }
-
-    self.postTagsLabel.text = [@"Метки: " stringByAppendingString:[mutableTagsNames componentsJoinedByString:@" "]];
-    self.ratingLabel.text = [_post.rating.stringValue stringByAppendingString:@"%"];
-    self.commentsLabel.text = _post.numberOfComments.stringValue;
-
+    self.entriesCollectionView.contentOffset = CGPointMake(0, 0);
+    
     [self.entriesCollectionView reloadData];
 }
 
@@ -90,7 +96,9 @@ static NSString * const entryCollectionCellIdentifier = @"entry_cell";
     [self.delegate postTableViewCell:self didSelectEntry:sortedEntries[indexPath.row]];
 }
 
-- (CGFloat)optimalHeightForWidth:(CGFloat)width {
+- (CGFloat)optimalHeightForWidth:(CGFloat)width withPost:(Post *)post{
+    [self setPostWithoutEntries:post];
+    
     CGRect r = self.frame;
     r.size.width = width;
     self.frame = r;
@@ -104,10 +112,6 @@ static NSString * const entryCollectionCellIdentifier = @"entry_cell";
     + self.postTagsLabel.optimalSize.height
     + CGRectGetHeight(self.entriesCollectionView.frame)
     + self.bottomSpaceConstraint.constant;
-}
-
-- (void)prepareForReuse {
-    self.entriesCollectionView.contentOffset = CGPointMake(0, 0);
 }
 
 @end

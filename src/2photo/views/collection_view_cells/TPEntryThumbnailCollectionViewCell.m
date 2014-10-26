@@ -25,7 +25,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-
+    
     self.layer.cornerRadius = 4;
     self.layer.borderWidth = 1;
     self.layer.borderColor = [[UIColor darkGrayColor] CGColor];
@@ -34,16 +34,16 @@
 
 - (void)setEntry:(Entry *)entry {
     _entry = entry;
-
+    
     [self.loadingIndicator startAnimating];
     self.thumbnailImageView.hidden = YES;
-
+    
     NSURL* url = [NSURL URLWithString:[@"http://" stringByAppendingString:_entry.bigImageUrl]];
-
+    
     __weak typeof(self) weakSelf = self;
-
+    
     __block Entry* blockEntry = _entry;
-
+    
     
     [[SDWebImageManager sharedManager] downloadImageWithURL:url
                                                     options:SDWebImageRetryFailed

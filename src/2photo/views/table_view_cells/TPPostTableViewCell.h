@@ -22,6 +22,6 @@
 @property (nonatomic, strong) Post* post;
 @property (nonatomic, weak) id<TPPostDelegate> delegate;
 
-- (CGFloat)optimalHeightForWidth:(CGFloat)width;
+- (CGFloat)optimalHeightForWidth:(CGFloat)width withPost:(Post*)post;
 
 @end

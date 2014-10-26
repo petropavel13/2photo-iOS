@@ -11,7 +11,9 @@
 #import "User.h"
 #import "UILabel+Extensions.h"
 
-@interface TPCommentTableViewCell ()
+@interface TPCommentTableViewCell () {
+    id<SDWebImageOperation> currentOperation;
+}
 
 @property (strong, nonatomic) IBOutlet UIImageView *authorAvatarImageView;
 @property (strong, nonatomic) IBOutlet UILabel *authorNameLabel;
@@ -31,36 +33,38 @@
 
 @implementation TPCommentTableViewCell
 
+- (void)setCommentWithoutAvatar:(Comment *)comment {
+    self.authorNameLabel.text = comment.author.name;
+    self.timeLabel.text = [NSDateFormatter localizedStringFromDate:comment.date
+                                                         dateStyle:NSDateFormatterLongStyle
+                                                         timeStyle:NSDateFormatterShortStyle];
+    self.messageLabel.text = comment.message;
+    self.ratingLabel.text = [comment.rating.stringValue stringByAppendingString:@"%"];
+}
+
 - (void)setComment:(Comment *)comment {
+    [currentOperation cancel];
     _comment = comment;
     
     __weak typeof(self) weakSelf = self;
     
-    __block Comment* blockComment = _comment;
-    
     NSURL* url = [NSURL URLWithString:[@"http://" stringByAppendingString:_comment.author.avatarUrl]];
     
     
-    [[SDWebImageManager sharedManager] downloadImageWithURL:url
+    currentOperation = [[SDWebImageManager sharedManager] downloadImageWithURL:url
                                                     options:SDWebImageRetryFailed
                                                    progress:nil
                                                   completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
                                                       if (finished) {
-                                                          if ([blockComment isEqual:_comment]) {
-                                                              weakSelf.authorAvatarImageView.image = image;
-                                                          }
+                                                          weakSelf.authorAvatarImageView.image = image;
                                                       }
                                                   }];
-    
-    self.authorNameLabel.text = _comment.author.name;
-    self.timeLabel.text = [NSDateFormatter localizedStringFromDate:_comment.date
-                                                         dateStyle:NSDateFormatterLongStyle
-                                                         timeStyle:NSDateFormatterShortStyle];
-    self.messageLabel.text = _comment.message;
-    self.ratingLabel.text = [_comment.rating.stringValue stringByAppendingString:@"%"];
+    [self setCommentWithoutAvatar:_comment];
 }
 
-- (CGFloat)optimalHeightForWidth:(CGFloat)width {
+- (CGFloat)optimalHeightForWidth:(CGFloat)width withComment:(Comment *)comment {
+    [self setCommentWithoutAvatar:comment];
+    
     CGRect r = self.frame;
     r.size.width = width;
     self.frame = r;

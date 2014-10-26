@@ -13,6 +13,6 @@
 
 @property (nonatomic, strong) Comment* comment;
 
-- (CGFloat)optimalHeightForWidth:(CGFloat)width;
+- (CGFloat)optimalHeightForWidth:(CGFloat)width withComment:(Comment*)comment;
 
 @end
