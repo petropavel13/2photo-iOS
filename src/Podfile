@@ -5,8 +5,8 @@ platform :ios, '7.0'
 
 pod 'AFNetworking/NSURLConnection', '~> 2.0'
 pod 'MWPhotoBrowser_pp', '~> 1.4.1'
-pod 'WYPopoverController', '~> 0.3.0'
+pod 'WYPopoverController', '~> 0.3.8'
 pod 'DZNSegmentedControl_pp', '~> 1.2'
-pod 'UIScrollView-InfiniteScroll', '~> 0.2.2'
+pod 'UIScrollView-InfiniteScroll', '~> 0.7'
 
 link_with '2photo', '2photoTests'
