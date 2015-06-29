@@ -10,8 +10,8 @@
 
 @implementation TPAppConstants
 
-//NSString * const apiUrl = @"http://192.168.3.1:8000/v1/";
-NSString * const apiUrl = @"http://198.49.66.155/v1/";
+NSString * const apiUrl = @"http://192.227.236.251/v1/";
+//NSString * const apiUrl = @"http://198.49.66.155/v1/";
 NSString * const postDetailControllerIdentifier = @"post_detail_controller";
 NSString * const authorDetailControllerIdentifier = @"author_detail_controller";
 NSString * const artistDetailControllerIdentifier = @"artist_detail_controller";
