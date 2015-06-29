@@ -48,7 +48,7 @@
     
     __weak typeof(self) weakSelf = self;
     
-    NSURL* url = [NSURL URLWithString:[@"http://" stringByAppendingString:_comment.author.avatarUrl]];
+    NSURL* url = [NSURL URLWithString:_comment.author.avatarUrl];
     
     
     currentOperation = [[SDWebImageManager sharedManager] downloadImageWithURL:url

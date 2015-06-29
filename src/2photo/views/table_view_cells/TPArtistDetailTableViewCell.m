@@ -26,7 +26,7 @@
 
     __weak typeof(self) weakSelf = self;
 
-    NSURL* url = [NSURL URLWithString:[@"http://" stringByAppendingString:_artist.avatarUrl]];
+    NSURL* url = [NSURL URLWithString:_artist.avatarUrl];
     
     operation = [[SDWebImageManager sharedManager] downloadImageWithURL:url
                                                                 options:SDWebImageRetryFailed

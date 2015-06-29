@@ -38,7 +38,7 @@
     [self.loadingIndicator startAnimating];
     self.thumbnailImageView.hidden = YES;
     
-    NSURL* url = [NSURL URLWithString:[@"http://" stringByAppendingString:_entry.bigImageUrl]];
+    NSURL* url = [NSURL URLWithString:_entry.bigImageUrl];
     
     __weak typeof(self) weakSelf = self;
     

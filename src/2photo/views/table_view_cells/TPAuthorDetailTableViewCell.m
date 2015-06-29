@@ -27,7 +27,7 @@
 - (void)setAuthor:(User *)author {
     _author = author;
     
-    NSURL* url = [NSURL URLWithString:[@"http://" stringByAppendingString:_author.avatarUrl]];
+    NSURL* url = [NSURL URLWithString:_author.avatarUrl];
 
     __weak typeof(self) weakSelf = self;
     

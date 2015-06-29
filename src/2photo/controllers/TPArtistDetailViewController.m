@@ -49,7 +49,7 @@ static NSString * const postCellIdentifier = @"post_cell";
     
     __weak typeof(self) weakSelf = self;
     
-    NSURL* url = [NSURL URLWithString:[@"http://" stringByAppendingString:_artist.avatarUrl] ];
+    NSURL* url = [NSURL URLWithString:_artist.avatarUrl ];
     
     [[SDWebImageManager sharedManager] downloadImageWithURL:url
                                                     options:SDWebImageRetryFailed

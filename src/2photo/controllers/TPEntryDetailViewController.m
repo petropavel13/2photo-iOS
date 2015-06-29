@@ -34,8 +34,7 @@
 
 - (id<MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
     Entry* entry = sortedEntries[index];
-    NSString* url = [@"http://" stringByAppendingString:entry.bigImageUrl];
-    MWPhoto* photo = [MWPhoto photoWithURL:[NSURL URLWithString:url]];
+    MWPhoto* photo = [MWPhoto photoWithURL:[NSURL URLWithString:entry.bigImageUrl]];
     photo.caption = entry.entryDescription.length > 0 ? entry.entryDescription : nil;
 
     return photo;

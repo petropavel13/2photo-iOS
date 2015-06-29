@@ -71,7 +71,7 @@ static NSString * const commentCellIdentifier = @"comment_cell";
 
     __weak typeof(self) weakSelf = self;
 
-    NSURL* url = [NSURL URLWithString:[@"http://" stringByAppendingString:_author.avatarUrl] ];
+    NSURL* url = [NSURL URLWithString:_author.avatarUrl ];
     
     [[SDWebImageManager sharedManager] downloadImageWithURL:url
                                                     options:SDWebImageRetryFailed

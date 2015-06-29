@@ -43,7 +43,7 @@
     
     __weak typeof(self) weakSelf = self;
     
-    NSURL* url = [NSURL URLWithString:[@"http://" stringByAppendingString:_entry.mediumImageUrl]];
+    NSURL* url = [NSURL URLWithString:_entry.mediumImageUrl];
     
     currentOperation = [[SDWebImageManager sharedManager] downloadImageWithURL:url
                                                                        options:SDWebImageRetryFailed
