@@ -14,6 +14,7 @@
 		78EB12801C4EF691004C1BA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78EB127E1C4EF691004C1BA3 /* LaunchScreen.storyboard */; };
 		78EB128B1C4EF691004C1BA3 /* TwoPhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB128A1C4EF691004C1BA3 /* TwoPhotoTests.swift */; };
 		78EB12961C4EF691004C1BA3 /* TwoPhotoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB12951C4EF691004C1BA3 /* TwoPhotoUITests.swift */; };
+		78EB12A51C4EF82D004C1BA3 /* EasyMapping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EB12A41C4EF82D004C1BA3 /* EasyMapping.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		78EB12911C4EF691004C1BA3 /* TwoPhotoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwoPhotoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78EB12951C4EF691004C1BA3 /* TwoPhotoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPhotoUITests.swift; sourceTree = "<group>"; };
 		78EB12971C4EF691004C1BA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78EB12A41C4EF82D004C1BA3 /* EasyMapping.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasyMapping.framework; path = Carthage/Build/iOS/EasyMapping.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78EB12A51C4EF82D004C1BA3 /* EasyMapping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +80,7 @@
 		78EB12691C4EF691004C1BA3 = {
 			isa = PBXGroup;
 			children = (
+				78EB12A31C4EF814004C1BA3 /* Frameworks */,
 				78EB12741C4EF691004C1BA3 /* TwoPhoto */,
 				78EB12891C4EF691004C1BA3 /* TwoPhotoTests */,
 				78EB12941C4EF691004C1BA3 /* TwoPhotoUITests */,
@@ -125,6 +129,14 @@
 			path = TwoPhotoUITests;
 			sourceTree = "<group>";
 		};
+		78EB12A31C4EF814004C1BA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78EB12A41C4EF82D004C1BA3 /* EasyMapping.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +147,7 @@
 				78EB126E1C4EF691004C1BA3 /* Sources */,
 				78EB126F1C4EF691004C1BA3 /* Frameworks */,
 				78EB12701C4EF691004C1BA3 /* Resources */,
+				78EB12A61C4EF838004C1BA3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -250,6 +263,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		78EB12A61C4EF838004C1BA3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/EasyMapping.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		78EB126E1C4EF691004C1BA3 /* Sources */ = {
@@ -399,6 +429,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TwoPhoto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -411,6 +445,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TwoPhoto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
