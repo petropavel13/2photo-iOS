@@ -4,12 +4,15 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/TwoPhotoUITests/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TwoPhotoUITests/TwoPhotoUITests.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TwoPhoto/Extensions/ModelsMapping/Post+Mapping.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TwoPhoto/AppDelegate.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TwoPhoto/TwoPhoto-Bridging-Header.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TwoPhoto/Models/Post.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TwoPhoto/ViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TwoPhoto/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TwoPhoto/Assets.xcassets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TwoPhoto/Base.lproj/LaunchScreen.storyboard" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TwoPhoto/Base.lproj/Main.storyboard" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/TwoPhoto/Assets.xcassets" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/TwoPhoto/ViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/TwoPhoto/AppDelegate.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/TwoPhoto/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TwoPhotoTests/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TwoPhotoTests/TwoPhotoTests.swift" isTestSource="false" />
     </content>

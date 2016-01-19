@@ -10,27 +10,33 @@ import XCTest
 @testable import TwoPhoto
 
 class TwoPhotoTests: XCTestCase {
-    
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
+
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let authorAvatarUrl = "http://static.2photo.ru/images/anonym100.png"
+        let authorName = "John"
+
+        let post = Post.objectWithProperties([
+                "id": 1,
+                "author": [
+                        "id": 1,
+                        "name": authorName,
+                        "avatar_url": authorAvatarUrl
+                ]
+        ])
+
+        XCTAssertEqual(post.id, 1)
+        XCTAssertEqual(post.author.id, 1)
+        XCTAssertEqual(post.author.name, authorName)
+        XCTAssertEqual(post.author.avatarUrl, authorAvatarUrl)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

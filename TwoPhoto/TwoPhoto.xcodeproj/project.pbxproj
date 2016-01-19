@@ -15,6 +15,9 @@
 		78EB128B1C4EF691004C1BA3 /* TwoPhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB128A1C4EF691004C1BA3 /* TwoPhotoTests.swift */; };
 		78EB12961C4EF691004C1BA3 /* TwoPhotoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB12951C4EF691004C1BA3 /* TwoPhotoUITests.swift */; };
 		78EB12A51C4EF82D004C1BA3 /* EasyMapping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EB12A41C4EF82D004C1BA3 /* EasyMapping.framework */; };
+		78EB12AF1C4EFBEA004C1BA3 /* EasyMapping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EB12A41C4EF82D004C1BA3 /* EasyMapping.framework */; };
+		78EB12B11C4F0100004C1BA3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB12B01C4F0100004C1BA3 /* Post.swift */; };
+		78EB12B31C4F014C004C1BA3 /* Post+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB12B21C4F014C004C1BA3 /* Post+Mapping.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		78EB12951C4EF691004C1BA3 /* TwoPhotoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPhotoUITests.swift; sourceTree = "<group>"; };
 		78EB12971C4EF691004C1BA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78EB12A41C4EF82D004C1BA3 /* EasyMapping.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasyMapping.framework; path = Carthage/Build/iOS/EasyMapping.framework; sourceTree = "<group>"; };
+		78EB12A71C4EF97E004C1BA3 /* TwoPhoto-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TwoPhoto-Bridging-Header.h"; sourceTree = "<group>"; };
+		78EB12B01C4F0100004C1BA3 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		78EB12B21C4F014C004C1BA3 /* Post+Mapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+Mapping.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78EB12AF1C4EFBEA004C1BA3 /* EasyMapping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,12 +108,15 @@
 		78EB12741C4EF691004C1BA3 /* TwoPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				C3721C6ED8CE35BA1B45C6F1 /* Models */,
+				C3721A332234780F85C068CE /* Extensions */,
 				78EB12751C4EF691004C1BA3 /* AppDelegate.swift */,
 				78EB12771C4EF691004C1BA3 /* ViewController.swift */,
 				78EB12791C4EF691004C1BA3 /* Main.storyboard */,
 				78EB127C1C4EF691004C1BA3 /* Assets.xcassets */,
 				78EB127E1C4EF691004C1BA3 /* LaunchScreen.storyboard */,
 				78EB12811C4EF691004C1BA3 /* Info.plist */,
+				78EB12A71C4EF97E004C1BA3 /* TwoPhoto-Bridging-Header.h */,
 			);
 			path = TwoPhoto;
 			sourceTree = "<group>";
@@ -135,6 +145,30 @@
 				78EB12A41C4EF82D004C1BA3 /* EasyMapping.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3721A332234780F85C068CE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C3721F7320FC2161E328DA58 /* ModelsMapping */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C3721C6ED8CE35BA1B45C6F1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				78EB12B01C4F0100004C1BA3 /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C3721F7320FC2161E328DA58 /* ModelsMapping */ = {
+			isa = PBXGroup;
+			children = (
+				78EB12B21C4F014C004C1BA3 /* Post+Mapping.swift */,
+			);
+			path = ModelsMapping;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,8 +320,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78EB12B31C4F014C004C1BA3 /* Post+Mapping.swift in Sources */,
 				78EB12781C4EF691004C1BA3 /* ViewController.swift in Sources */,
 				78EB12761C4EF691004C1BA3 /* AppDelegate.swift in Sources */,
+				78EB12B11C4F0100004C1BA3 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +465,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -438,6 +475,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.petropavel13.TwoPhoto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TwoPhoto/TwoPhoto-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -445,6 +485,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -454,6 +495,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.petropavel13.TwoPhoto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TwoPhoto/TwoPhoto-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -461,6 +504,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TwoPhotoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.petropavel13.TwoPhotoTests;
@@ -473,6 +520,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TwoPhotoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.petropavel13.TwoPhotoTests;
@@ -524,6 +575,7 @@
 				78EB129C1C4EF691004C1BA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		78EB129D1C4EF691004C1BA3 /* Build configuration list for PBXNativeTarget "TwoPhotoTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +584,7 @@
 				78EB129F1C4EF691004C1BA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		78EB12A01C4EF691004C1BA3 /* Build configuration list for PBXNativeTarget "TwoPhotoUITests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +593,7 @@
 				78EB12A21C4EF691004C1BA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
