@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		78EB12761C4EF691004C1BA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB12751C4EF691004C1BA3 /* AppDelegate.swift */; };
+		78EB12781C4EF691004C1BA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB12771C4EF691004C1BA3 /* ViewController.swift */; };
+		78EB127B1C4EF691004C1BA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78EB12791C4EF691004C1BA3 /* Main.storyboard */; };
+		78EB127D1C4EF691004C1BA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78EB127C1C4EF691004C1BA3 /* Assets.xcassets */; };
+		78EB12801C4EF691004C1BA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78EB127E1C4EF691004C1BA3 /* LaunchScreen.storyboard */; };
+		78EB128B1C4EF691004C1BA3 /* TwoPhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB128A1C4EF691004C1BA3 /* TwoPhotoTests.swift */; };
+		78EB12961C4EF691004C1BA3 /* TwoPhotoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB12951C4EF691004C1BA3 /* TwoPhotoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		78EB12871C4EF691004C1BA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78EB126A1C4EF691004C1BA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78EB12711C4EF691004C1BA3;
+			remoteInfo = TwoPhoto;
+		};
+		78EB12921C4EF691004C1BA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78EB126A1C4EF691004C1BA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78EB12711C4EF691004C1BA3;
+			remoteInfo = TwoPhoto;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		78EB12721C4EF691004C1BA3 /* TwoPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwoPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78EB12751C4EF691004C1BA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		78EB12771C4EF691004C1BA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		78EB127A1C4EF691004C1BA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		78EB127C1C4EF691004C1BA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		78EB127F1C4EF691004C1BA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		78EB12811C4EF691004C1BA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78EB12861C4EF691004C1BA3 /* TwoPhotoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwoPhotoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78EB128A1C4EF691004C1BA3 /* TwoPhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPhotoTests.swift; sourceTree = "<group>"; };
+		78EB128C1C4EF691004C1BA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78EB12911C4EF691004C1BA3 /* TwoPhotoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwoPhotoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78EB12951C4EF691004C1BA3 /* TwoPhotoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPhotoUITests.swift; sourceTree = "<group>"; };
+		78EB12971C4EF691004C1BA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		78EB126F1C4EF691004C1BA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78EB12831C4EF691004C1BA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78EB128E1C4EF691004C1BA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		78EB12691C4EF691004C1BA3 = {
+			isa = PBXGroup;
+			children = (
+				78EB12741C4EF691004C1BA3 /* TwoPhoto */,
+				78EB12891C4EF691004C1BA3 /* TwoPhotoTests */,
+				78EB12941C4EF691004C1BA3 /* TwoPhotoUITests */,
+				78EB12731C4EF691004C1BA3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		78EB12731C4EF691004C1BA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78EB12721C4EF691004C1BA3 /* TwoPhoto.app */,
+				78EB12861C4EF691004C1BA3 /* TwoPhotoTests.xctest */,
+				78EB12911C4EF691004C1BA3 /* TwoPhotoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78EB12741C4EF691004C1BA3 /* TwoPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				78EB12751C4EF691004C1BA3 /* AppDelegate.swift */,
+				78EB12771C4EF691004C1BA3 /* ViewController.swift */,
+				78EB12791C4EF691004C1BA3 /* Main.storyboard */,
+				78EB127C1C4EF691004C1BA3 /* Assets.xcassets */,
+				78EB127E1C4EF691004C1BA3 /* LaunchScreen.storyboard */,
+				78EB12811C4EF691004C1BA3 /* Info.plist */,
+			);
+			path = TwoPhoto;
+			sourceTree = "<group>";
+		};
+		78EB12891C4EF691004C1BA3 /* TwoPhotoTests */ = {
+			isa = PBXGroup;
+			children = (
+				78EB128A1C4EF691004C1BA3 /* TwoPhotoTests.swift */,
+				78EB128C1C4EF691004C1BA3 /* Info.plist */,
+			);
+			path = TwoPhotoTests;
+			sourceTree = "<group>";
+		};
+		78EB12941C4EF691004C1BA3 /* TwoPhotoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				78EB12951C4EF691004C1BA3 /* TwoPhotoUITests.swift */,
+				78EB12971C4EF691004C1BA3 /* Info.plist */,
+			);
+			path = TwoPhotoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		78EB12711C4EF691004C1BA3 /* TwoPhoto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78EB129A1C4EF691004C1BA3 /* Build configuration list for PBXNativeTarget "TwoPhoto" */;
+			buildPhases = (
+				78EB126E1C4EF691004C1BA3 /* Sources */,
+				78EB126F1C4EF691004C1BA3 /* Frameworks */,
+				78EB12701C4EF691004C1BA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TwoPhoto;
+			productName = TwoPhoto;
+			productReference = 78EB12721C4EF691004C1BA3 /* TwoPhoto.app */;
+			productType = "com.apple.product-type.application";
+		};
+		78EB12851C4EF691004C1BA3 /* TwoPhotoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78EB129D1C4EF691004C1BA3 /* Build configuration list for PBXNativeTarget "TwoPhotoTests" */;
+			buildPhases = (
+				78EB12821C4EF691004C1BA3 /* Sources */,
+				78EB12831C4EF691004C1BA3 /* Frameworks */,
+				78EB12841C4EF691004C1BA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78EB12881C4EF691004C1BA3 /* PBXTargetDependency */,
+			);
+			name = TwoPhotoTests;
+			productName = TwoPhotoTests;
+			productReference = 78EB12861C4EF691004C1BA3 /* TwoPhotoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		78EB12901C4EF691004C1BA3 /* TwoPhotoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78EB12A01C4EF691004C1BA3 /* Build configuration list for PBXNativeTarget "TwoPhotoUITests" */;
+			buildPhases = (
+				78EB128D1C4EF691004C1BA3 /* Sources */,
+				78EB128E1C4EF691004C1BA3 /* Frameworks */,
+				78EB128F1C4EF691004C1BA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78EB12931C4EF691004C1BA3 /* PBXTargetDependency */,
+			);
+			name = TwoPhotoUITests;
+			productName = TwoPhotoUITests;
+			productReference = 78EB12911C4EF691004C1BA3 /* TwoPhotoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		78EB126A1C4EF691004C1BA3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "null inc.";
+				TargetAttributes = {
+					78EB12711C4EF691004C1BA3 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					78EB12851C4EF691004C1BA3 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 78EB12711C4EF691004C1BA3;
+					};
+					78EB12901C4EF691004C1BA3 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 78EB12711C4EF691004C1BA3;
+					};
+				};
+			};
+			buildConfigurationList = 78EB126D1C4EF691004C1BA3 /* Build configuration list for PBXProject "TwoPhoto" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 78EB12691C4EF691004C1BA3;
+			productRefGroup = 78EB12731C4EF691004C1BA3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				78EB12711C4EF691004C1BA3 /* TwoPhoto */,
+				78EB12851C4EF691004C1BA3 /* TwoPhotoTests */,
+				78EB12901C4EF691004C1BA3 /* TwoPhotoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		78EB12701C4EF691004C1BA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78EB12801C4EF691004C1BA3 /* LaunchScreen.storyboard in Resources */,
+				78EB127D1C4EF691004C1BA3 /* Assets.xcassets in Resources */,
+				78EB127B1C4EF691004C1BA3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78EB12841C4EF691004C1BA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78EB128F1C4EF691004C1BA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		78EB126E1C4EF691004C1BA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78EB12781C4EF691004C1BA3 /* ViewController.swift in Sources */,
+				78EB12761C4EF691004C1BA3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78EB12821C4EF691004C1BA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78EB128B1C4EF691004C1BA3 /* TwoPhotoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78EB128D1C4EF691004C1BA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78EB12961C4EF691004C1BA3 /* TwoPhotoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		78EB12881C4EF691004C1BA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78EB12711C4EF691004C1BA3 /* TwoPhoto */;
+			targetProxy = 78EB12871C4EF691004C1BA3 /* PBXContainerItemProxy */;
+		};
+		78EB12931C4EF691004C1BA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78EB12711C4EF691004C1BA3 /* TwoPhoto */;
+			targetProxy = 78EB12921C4EF691004C1BA3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		78EB12791C4EF691004C1BA3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78EB127A1C4EF691004C1BA3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		78EB127E1C4EF691004C1BA3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78EB127F1C4EF691004C1BA3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		78EB12981C4EF691004C1BA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		78EB12991C4EF691004C1BA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		78EB129B1C4EF691004C1BA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TwoPhoto/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.petropavel13.TwoPhoto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		78EB129C1C4EF691004C1BA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TwoPhoto/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.petropavel13.TwoPhoto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		78EB129E1C4EF691004C1BA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TwoPhotoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.petropavel13.TwoPhotoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TwoPhoto.app/TwoPhoto";
+			};
+			name = Debug;
+		};
+		78EB129F1C4EF691004C1BA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TwoPhotoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.petropavel13.TwoPhotoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TwoPhoto.app/TwoPhoto";
+			};
+			name = Release;
+		};
+		78EB12A11C4EF691004C1BA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TwoPhotoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.petropavel13.TwoPhotoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TwoPhoto;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		78EB12A21C4EF691004C1BA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TwoPhotoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.petropavel13.TwoPhotoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TwoPhoto;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		78EB126D1C4EF691004C1BA3 /* Build configuration list for PBXProject "TwoPhoto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78EB12981C4EF691004C1BA3 /* Debug */,
+				78EB12991C4EF691004C1BA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78EB129A1C4EF691004C1BA3 /* Build configuration list for PBXNativeTarget "TwoPhoto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78EB129B1C4EF691004C1BA3 /* Debug */,
+				78EB129C1C4EF691004C1BA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		78EB129D1C4EF691004C1BA3 /* Build configuration list for PBXNativeTarget "TwoPhotoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78EB129E1C4EF691004C1BA3 /* Debug */,
+				78EB129F1C4EF691004C1BA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		78EB12A01C4EF691004C1BA3 /* Build configuration list for PBXNativeTarget "TwoPhotoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78EB12A11C4EF691004C1BA3 /* Debug */,
+				78EB12A21C4EF691004C1BA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 78EB126A1C4EF691004C1BA3 /* Project object */;
+}
