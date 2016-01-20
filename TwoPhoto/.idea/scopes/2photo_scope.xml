@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="2photo_scope" pattern="file[TwoPhoto]:TwoPhoto//*||file[TwoPhoto]:TwoPhotoTests//*||file[TwoPhoto]:TwoPhotoUITests//*" />
+</component>
