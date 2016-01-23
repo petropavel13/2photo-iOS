@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78C04ED61C54421700A5862D /* Knapsack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C04ED51C54421700A5862D /* Knapsack.framework */; };
 		78EB12761C4EF691004C1BA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB12751C4EF691004C1BA3 /* AppDelegate.swift */; };
 		78EB12781C4EF691004C1BA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB12771C4EF691004C1BA3 /* ViewController.swift */; };
 		78EB127B1C4EF691004C1BA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78EB12791C4EF691004C1BA3 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		78C04ED51C54421700A5862D /* Knapsack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Knapsack.framework; path = Carthage/Build/iOS/Knapsack.framework; sourceTree = "<group>"; };
 		78EB12721C4EF691004C1BA3 /* TwoPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwoPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78EB12751C4EF691004C1BA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78EB12771C4EF691004C1BA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78C04ED61C54421700A5862D /* Knapsack.framework in Frameworks */,
 				78EB12A51C4EF82D004C1BA3 /* EasyMapping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +145,7 @@
 		78EB12A31C4EF814004C1BA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				78C04ED51C54421700A5862D /* Knapsack.framework */,
 				78EB12A41C4EF82D004C1BA3 /* EasyMapping.framework */,
 			);
 			name = Frameworks;
@@ -306,6 +310,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/EasyMapping.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Knapsack.framework",
 			);
 			outputPaths = (
 			);

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Knapsack
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, StoryboardIdentifier {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    static func storyboardIdentifier() -> String {
+        return "fun!"
+    }
 }
 
